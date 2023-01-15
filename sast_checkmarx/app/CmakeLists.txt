@@ -1,0 +1,16 @@
+message(">>>>> SAST APP <<<<<")
+
+include_directories(${QT_INCLUDE_DIR})
+include_directories(${APP_DIR})
+include_directories(${LIB_DIR})
+
+set(SOURCE_FILES ${APP_DIR}/main.cpp)
+
+set (FILES_TO_TRANSLATE ${FILES_TO_TRANSLATE} ${SOURCE_FILES} ${HEADER_FILES} PARENT_SCOPE)
+
+link_directories( ${QT_LIB_DIR} )
+link_directories( ${LIB_DIR} )
+
+add_executable( SAST_APP ${SOURCE_FILES} )
+
+target_link_libraries( SAST_APP SAST_LIB ws2_32 qt5core)

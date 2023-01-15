@@ -1,0 +1,12 @@
+message(">>>>> SAST LIB <<<<<")
+
+include_directories(${QT_INCLUDE_DIR})
+include_directories(${LIB_DIR})
+
+set(SOURCE_FILES ${LIB_DIR}/func.cpp)
+
+set(HEADER_FILES ${LIB_DIR}/func.hpp)
+
+set (FILES_TO_TRANSLATE ${FILES_TO_TRANSLATE} ${SOURCE_FILES} ${HEADER_FILES} PARENT_SCOPE)
+
+add_library(SAST_LIB STATIC ${RESOURCE_FILES} ${HEADER_FILES} ${SOURCE_FILES})
